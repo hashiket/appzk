@@ -1,0 +1,12 @@
+{% extends 'user/main.html' %}
+{% block content %}
+<div class="container">
+    <ol>
+        {% for post in posts %}
+        
+            <li>{{post.text}}</li>
+        {% endfor %}
+    </ol>
+</div>
+    
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'user/main.html' %}
+{% block content %}
+<ol>
+    {% for product in products %}
+        <li>Name:{{product.name}}
+            weight:{{product.weigth}}
+            price:{{product.price}}
+        </li>
+       
+    {% endfor %}
+</ol>
+
+{% endblock %}

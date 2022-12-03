@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bus Reservations</title>
+
+
+    <link rel="stylesheet"
+         href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+ </script>
+   <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+   </script>
+   <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+   </script>
+
+
+
+  </head>
+  <body >
+
+    <nav class="navbar  navbar-expand-lg navbar-light bg-secondary"  >
+      <div class="container-fluid" >
+        <a class="navbar-brand text-white" href="#">App </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+            {% if user.is_authenticated %}
+            <li class="nav-item ">
+              <a class="nav-link active text-white" aria-current="page" href="post">Add Post</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link active text-white" aria-current="page" href="product">Add Product</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link active text-white" aria-current="page" href="allpost">GetAllPost</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link active text-white" aria-current="page" href="allproduct">GetAllProduct</a>
+            </li>
+            {% else%}
+              <li class="nav-item ">
+                <a class="nav-link active text-white" aria-current="page" href="/"></a>
+              </li>
+              
+            {% endif %}
+  
+        </div>
+      </div>
+        <div style="float:right">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {% if user.is_authenticated %}
+         <li style="color:#8ff2b2">Hello,{{user.username}}</li>
+
+          <li class="nav-item " align="right">
+            <a class="nav-link active text-white" aria-current="page" href="logout" >Logout</a>
+          </li>
+          {% else%}
+          <li class="nav-item " >
+            <a class="nav-link active text-white" aria-current="page" href="login" align="right">Login</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link active text-white" aria-current="page" href="register">register</a>
+          </li>
+          {% endif %}
+
+
+        </ul>
+        </div>
+      </div>
+    </nav>
+
+{% block content %}
+
+    <div class="container">
+      
+    </div>
+
+
+
+    {% endblock %}
+
+
+
+  </body>
+</html>
